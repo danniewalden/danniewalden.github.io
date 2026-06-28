@@ -1,6 +1,6 @@
 ---
 title: The Solution-Space Side of DDD Is Done
-description: "What's left of internal bounded contexts when you build with event sourcing, vertical slices, and a model-first practice — and what agentic AI changes about that."
+description: "What's left of internal bounded contexts when you build with event sourcing, vertical slices, and event modeling — and what agentic AI changes about that."
 pubDate: 2026-06-28
 updatedDate: 2026-06-28
 series: NoBoundedContexts
@@ -9,15 +9,15 @@ seriesTotal: 1
 lastVerified: 2026-06-28
 ---
 
-> **Takeaway.** Inside a monolith you own end-to-end — event-sourced, vertical-sliced, model-first — strategic DDD survives on the problem-space side, and its solution-space side (bounded contexts as drawn artifacts, tactical patterns as code shapes) has nothing structural left to do. The only wall worth drawing is the one around the outside.
+> **Takeaway.** Inside a monolith you own end-to-end — event-sourced, vertical-sliced, model-first via event modeling — strategic DDD survives on the problem-space side, and its solution-space side (bounded contexts as drawn artifacts, tactical patterns as code shapes) has nothing structural left to do. The only wall worth drawing is the one around the outside.
 
 **TL;DR**
 
 - **Strategic DDD is problem-space work** — naming subdomains, building ubiquitous language, modeling the business — and survives in full. What collapses is the **solution-space side**: bounded contexts as drawn artifacts, tactical patterns as code shapes.
-- Bounded contexts were invented to defend against leak paths — shared tables, shared in-memory state, shared services, multi-team language drift — that **event sourcing with Dynamic Consistency Boundaries**, **vertical slice architecture**, and **a model-first practice** have already closed.
+- Bounded contexts were invented to defend against leak paths — shared tables, shared in-memory state, shared services, multi-team language drift — that **event sourcing with Dynamic Consistency Boundaries**, **vertical slice architecture**, and **event modeling as a model-first practice** have already closed.
 - Inside such a monolith there is **one swimlane**, not many. Subdomains stay in the business as a way of talking about the work; they have no representation in the solution space — no module, no namespace, no label.
 - A single parse-time rule (every fully-qualified event name unique) plus the model-first practice does the linguistic work strategic DDD used to do — singularly, not multiplied across internal subdomains.
-- The **translation slice** still earns its keep — at the *periphery*, between the owned monolith and legacy or external systems. Inside the monolith, with one context, there is nothing to translate.
+- The **translation slice** (event modeling's pattern for crossing a context boundary) still earns its keep — at the *periphery*, between the owned monolith and legacy or external systems. Inside the monolith, with one context, there is nothing to translate.
 - Drawing internal BCs anyway is **not free**: it costs design hours, language-drift maintenance, institutional ownership disputes, and migration pain when the business shape changes under you.
 - **Agentic AI** is the force multiplier, not the prerequisite. It takes the residual cost of being wrong about a boundary from "manageable" to "trivial."
 
@@ -62,7 +62,7 @@ Every one of those motivations assumes a coupling surface *other than events*. S
 
 ## For DDD-aligned readers
 
-A DDD-aligned reader has three legitimate fears about the argument so far. Each is worth naming before the post goes further.
+A DDD-aligned reader has several legitimate fears about the argument so far. Each is worth naming before the post goes further.
 
 **"You're just renaming bounded contexts as swimlanes."** Sharper than that. Inside the monolith there is *one* swimlane, for the whole business — not many. Subdomains live in the business (in conversations, in org charts, in how people describe what they do); they have no representation in the solution space at all. No module per subdomain, no namespace per subdomain, no swimlane per subdomain. You don't draw `Manuscripts/X` versus `Reviews/Y` because the code never knows about Manuscripts or Reviews as structural concepts. Multiple swimlanes are reserved for parts of the world you don't own. The "swimlane label" that survives is the one outer boundary between the owned monolith and everything else; it's not a renamed sub-BC, because there are no internal sub-BCs to rename. What changed conditions made redundant is the structural artifact, the multiplicity, *and* the very idea that subdomains need a solution-space form.
 
