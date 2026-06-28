@@ -1,48 +1,165 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const seriesNames = [
+	...new Set(posts.map((p) => p.data.series).filter(Boolean)),
+] as string[];
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: 0 auto;
+				padding: 3em 1em;
+			}
+			.intro {
+				margin-bottom: 3em;
+				padding-bottom: 2em;
+				border-bottom: 1px solid rgb(var(--gray-light));
+			}
+			.intro h1 {
+				margin: 0 0 0.5em 0;
+				font-size: 2.5em;
+				line-height: 1.1;
+			}
+			.intro p {
+				font-size: 1.1em;
+				color: rgb(var(--gray-dark));
+				margin: 0;
+			}
+			section h2 {
+				font-size: 1.4em;
+				margin: 0 0 1em 0;
+				color: rgb(var(--gray-dark));
+				letter-spacing: 0.02em;
+				text-transform: uppercase;
+				font-size: 0.85em;
+			}
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0 0 3em 0;
+			}
+			.posts li {
+				padding: 1.25em 0;
+				border-top: 1px solid rgb(var(--gray-light));
+			}
+			.posts li:last-child {
+				border-bottom: 1px solid rgb(var(--gray-light));
+			}
+			.post-title {
+				margin: 0 0 0.25em 0;
+				font-size: 1.4em;
+				line-height: 1.2;
+			}
+			.post-title a {
+				color: rgb(var(--black));
+				text-decoration: none;
+			}
+			.post-title a:hover {
+				color: rgb(var(--accent));
+			}
+			.post-meta {
+				margin: 0 0 0.5em 0;
+				color: rgb(var(--gray));
+				font-size: 0.9em;
+			}
+			.series-tag {
+				display: inline-block;
+				margin-right: 0.5em;
+				padding: 0.15em 0.5em;
+				background: rgb(var(--gray-light));
+				border-radius: 3px;
+				font-size: 0.85em;
+				letter-spacing: 0.03em;
+			}
+			.series-tag a {
+				color: rgb(var(--gray-dark));
+				text-decoration: none;
+			}
+			.series-tag a:hover {
+				color: rgb(var(--accent));
+			}
+			.description {
+				margin: 0;
+				color: rgb(var(--gray-dark));
+			}
+			.series-list li {
+				padding: 0.5em 0;
+			}
+			.series-list a {
+				color: rgb(var(--black));
+				text-decoration: none;
+				font-weight: 500;
+			}
+			.series-list a:hover {
+				color: rgb(var(--accent));
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<div class="intro">
+				<h1>{SITE_TITLE}</h1>
+				<p>{SITE_DESCRIPTION}</p>
+			</div>
+
+			<section>
+				<h2>Essays</h2>
+				<ul class="posts">
+					{
+						posts.map((post) => (
+							<li>
+								<h3 class="post-title">
+									<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+								</h3>
+								<p class="post-meta">
+									{post.data.series && (
+										<span class="series-tag">
+											<a href={`/series/${post.data.series.toLowerCase()}/`}>
+												{post.data.series}
+												{post.data.seriesPart && ` · Part ${post.data.seriesPart}`}
+											</a>
+										</span>
+									)}
+									<FormattedDate date={post.data.pubDate} />
+								</p>
+								<p class="description">{post.data.description}</p>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+
+			{
+				seriesNames.length > 0 && (
+					<section>
+						<h2>Series</h2>
+						<ul class="series-list">
+							{seriesNames.map((name) => (
+								<li>
+									<a href={`/series/${name.toLowerCase()}/`}>{name}</a>
+								</li>
+							))}
+						</ul>
+					</section>
+				)
+			}
 		</main>
 		<Footer />
 	</body>
