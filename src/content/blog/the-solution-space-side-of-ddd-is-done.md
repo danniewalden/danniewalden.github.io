@@ -15,7 +15,7 @@ lastVerified: 2026-06-28
 
 - **Strategic DDD is problem-space work** — naming subdomains, building ubiquitous language, modeling the business — and survives in full. What collapses is the **solution-space side**: bounded contexts as drawn artifacts, tactical patterns as code shapes.
 - Bounded contexts were invented to defend against leak paths — shared tables, shared in-memory state, shared services, multi-team language drift — that **event sourcing with Dynamic Consistency Boundaries**, **vertical slice architecture**, and **event modeling as a model-first practice** have already closed.
-- Inside such a monolith there is **one swimlane**, not many. Subdomains stay in the business as a way of talking about the work; they have no representation in the solution space — no module, no namespace, no label.
+- Inside such a monolith there is **one swimlane** — one event-modeling lane for the whole business, not one per subdomain. Subdomains stay in the business as a way of talking about the work; they have no representation in the solution space — no module, no namespace, no label.
 - A single parse-time rule (every fully-qualified event name unique) plus the model-first practice does the linguistic work strategic DDD used to do — singularly, not multiplied across internal subdomains.
 - The **translation slice** (event modeling's pattern for crossing a context boundary) still earns its keep — at the *periphery*, between the owned monolith and legacy or external systems. Inside the monolith, with one context, there is nothing to translate.
 - Drawing internal BCs anyway is **not free**: it costs design hours, language-drift maintenance, institutional ownership disputes, and migration pain when the business shape changes under you.
