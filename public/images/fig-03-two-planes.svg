@@ -1,0 +1,82 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-2 desc-2">
+  <title id="title-2">Two Planes — Problem-space vs Solution-space</title>
+  <desc id="desc-2">Two horizontal planes stacked vertically. The top plane is problem-space and contains cloud-bubbles for subdomains (Manuscripts, Reviews, Editorial). The bottom plane is solution-space and contains a flat, undifferentiated row of business events. Dashed arrows fall from subdomain bubbles to scattered events across the bottom plane, crossing each other — showing that events carry business intent but the code is not organized by subdomain.</desc>
+
+  <defs>
+    <marker id="arrowhead-2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#c97a3f"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="500" fill="#fafaf7"/>
+
+  <!-- TOP PLANE label -->
+  <g font-family="Georgia, serif" text-anchor="middle">
+    <text x="450" y="32" font-size="18" font-weight="600" fill="#1f1f1f">Problem space · the business</text>
+    <text x="450" y="52" font-size="12" font-style="italic" fill="#666">subdomains live here · how people talk about the work</text>
+  </g>
+
+  <!-- Top plane background band -->
+  <rect x="40" y="75" width="820" height="135" fill="#f5ecdb" stroke="none"/>
+
+  <!-- Subdomain bubbles -->
+  <g font-family="Georgia, serif">
+    <ellipse cx="200" cy="143" rx="105" ry="50" fill="#fff7e8" stroke="#9a7a3a" stroke-width="2"/>
+    <text x="200" y="148" text-anchor="middle" font-size="16" font-weight="600" fill="#5e4818">Manuscripts</text>
+
+    <ellipse cx="450" cy="143" rx="90" ry="50" fill="#fff7e8" stroke="#9a7a3a" stroke-width="2"/>
+    <text x="450" y="148" text-anchor="middle" font-size="16" font-weight="600" fill="#5e4818">Reviews</text>
+
+    <ellipse cx="700" cy="143" rx="95" ry="50" fill="#fff7e8" stroke="#9a7a3a" stroke-width="2"/>
+    <text x="700" y="148" text-anchor="middle" font-size="16" font-weight="600" fill="#5e4818">Editorial</text>
+  </g>
+
+  <!-- Arrows from subdomains down to scattered events (crossing each other) -->
+  <g stroke="#c97a3f" stroke-width="1.5" stroke-dasharray="5,3" fill="none">
+    <!-- Manuscripts → 3 events scattered -->
+    <path d="M 170 193 C 170 250, 110 290, 110 333" marker-end="url(#arrowhead-2)"/>
+    <path d="M 200 193 C 200 250, 420 290, 420 333" marker-end="url(#arrowhead-2)"/>
+    <path d="M 230 193 C 230 280, 770 280, 770 333" marker-end="url(#arrowhead-2)"/>
+    <!-- Reviews → 2 events -->
+    <path d="M 430 193 C 430 250, 240 290, 240 333" marker-end="url(#arrowhead-2)"/>
+    <path d="M 470 193 C 470 270, 555 280, 555 333" marker-end="url(#arrowhead-2)"/>
+    <!-- Editorial → 2 events -->
+    <path d="M 680 193 C 680 280, 330 280, 330 333" marker-end="url(#arrowhead-2)"/>
+    <path d="M 720 193 C 720 270, 680 290, 680 333" marker-end="url(#arrowhead-2)"/>
+  </g>
+
+  <!-- Mid annotation -->
+  <text x="450" y="275" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#c97a3f">events carry business intent — but no structure crosses with them</text>
+
+  <!-- BOTTOM PLANE -->
+  <rect x="40" y="320" width="820" height="55" fill="#fff" stroke="#444" stroke-width="2"/>
+
+  <!-- Flat row of events, evenly-ish spaced, no clustering -->
+  <g fill="#3a3a3a">
+    <circle cx="80" cy="347" r="4"/>
+    <circle cx="110" cy="347" r="4"/>
+    <circle cx="155" cy="347" r="4"/>
+    <circle cx="195" cy="347" r="4"/>
+    <circle cx="240" cy="347" r="4"/>
+    <circle cx="285" cy="347" r="4"/>
+    <circle cx="330" cy="347" r="4"/>
+    <circle cx="375" cy="347" r="4"/>
+    <circle cx="420" cy="347" r="4"/>
+    <circle cx="465" cy="347" r="4"/>
+    <circle cx="510" cy="347" r="4"/>
+    <circle cx="555" cy="347" r="4"/>
+    <circle cx="600" cy="347" r="4"/>
+    <circle cx="640" cy="347" r="4"/>
+    <circle cx="680" cy="347" r="4"/>
+    <circle cx="725" cy="347" r="4"/>
+    <circle cx="770" cy="347" r="4"/>
+    <circle cx="815" cy="347" r="4"/>
+  </g>
+
+  <!-- BOTTOM PLANE label -->
+  <g font-family="Georgia, serif" text-anchor="middle">
+    <text x="450" y="408" font-size="18" font-weight="600" fill="#1f1f1f">Solution space · the code</text>
+    <text x="450" y="428" font-size="12" font-style="italic" fill="#666">events and slices · one lane · no zones, no modules, no labels per subdomain</text>
+    <text x="450" y="478" font-size="11" font-style="italic" fill="#888">subdomains organize how the business is talked about · the code never reorganizes to match</text>
+  </g>
+</svg>

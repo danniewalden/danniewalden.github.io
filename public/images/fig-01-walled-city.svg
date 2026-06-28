@@ -1,0 +1,114 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-1 desc-1">
+  <title id="title-1">The Walled City</title>
+  <desc id="desc-1">The owned monolith drawn as a single walled city with subdomain neighborhoods as ghosted outlines, surrounded by external and legacy systems connected through translation gates on the wall.</desc>
+
+  <rect width="900" height="560" fill="#fafaf7"/>
+
+  <!-- Connecting lines from gates on the wall to external systems -->
+  <g stroke="#c97a3f" stroke-width="2" stroke-dasharray="6,4" fill="none">
+    <line x1="648" y1="184" x2="730" y2="135"/>
+    <line x1="670" y1="292" x2="765" y2="297"/>
+    <line x1="637" y1="395" x2="708" y2="442"/>
+    <line x1="254" y1="381" x2="173" y2="427"/>
+  </g>
+
+  <!-- External + legacy systems -->
+  <g font-family="Georgia, serif" font-size="13" fill="#2a2a2a">
+    <circle cx="780" cy="120" r="55" fill="#fff" stroke="#444" stroke-width="2"/>
+    <text x="780" y="115" text-anchor="middle">External:</text>
+    <text x="780" y="133" text-anchor="middle" font-weight="600">Stripe</text>
+
+    <circle cx="820" cy="300" r="55" fill="#fff" stroke="#444" stroke-width="2"/>
+    <text x="820" y="295" text-anchor="middle">External:</text>
+    <text x="820" y="313" text-anchor="middle" font-weight="600">SAP</text>
+
+    <circle cx="760" cy="470" r="55" fill="#fff" stroke="#444" stroke-width="2"/>
+    <text x="760" y="465" text-anchor="middle">Legacy:</text>
+    <text x="760" y="483" text-anchor="middle" font-weight="600">Acme ERP</text>
+
+    <circle cx="120" cy="450" r="55" fill="#fff" stroke="#444" stroke-width="2"/>
+    <text x="120" y="445" text-anchor="middle">Legacy:</text>
+    <text x="120" y="463" text-anchor="middle" font-weight="600">WordPress</text>
+  </g>
+
+  <!-- The monolith wall -->
+  <circle cx="450" cy="280" r="220" fill="#fefcf8" stroke="#1f1f1f" stroke-width="3"/>
+
+  <!-- Ghost neighborhoods -->
+  <g fill="none" stroke="#b9b9b9" stroke-width="1" stroke-dasharray="4,3">
+    <ellipse cx="380" cy="218" rx="75" ry="50"/>
+    <ellipse cx="525" cy="218" rx="70" ry="48"/>
+    <ellipse cx="385" cy="348" rx="70" ry="45"/>
+    <ellipse cx="525" cy="348" rx="65" ry="45"/>
+  </g>
+  <g font-family="Georgia, serif" font-size="11" font-style="italic" fill="#9a9a9a" text-anchor="middle">
+    <text x="380" y="170">Manuscripts</text>
+    <text x="525" y="170">Reviews</text>
+    <text x="385" y="403">Editorial</text>
+    <text x="525" y="403">Submissions</text>
+  </g>
+
+  <!-- Events: small dots clustered inside their subdomain neighborhoods -->
+  <g fill="#3a3a3a">
+    <!-- Manuscripts -->
+    <circle cx="340" cy="208" r="3"/>
+    <circle cx="358" cy="222" r="3"/>
+    <circle cx="378" cy="208" r="3"/>
+    <circle cx="395" cy="222" r="3"/>
+    <circle cx="418" cy="228" r="3"/>
+    <circle cx="350" cy="236" r="3"/>
+    <circle cx="372" cy="240" r="3"/>
+    <circle cx="395" cy="200" r="3"/>
+    <circle cx="412" cy="208" r="3"/>
+    <circle cx="380" cy="225" r="3"/>
+    <!-- Reviews -->
+    <circle cx="488" cy="208" r="3"/>
+    <circle cx="508" cy="220" r="3"/>
+    <circle cx="528" cy="208" r="3"/>
+    <circle cx="548" cy="220" r="3"/>
+    <circle cx="562" cy="232" r="3"/>
+    <circle cx="500" cy="232" r="3"/>
+    <circle cx="525" cy="240" r="3"/>
+    <circle cx="545" cy="206" r="3"/>
+    <circle cx="510" cy="200" r="3"/>
+    <!-- Editorial -->
+    <circle cx="345" cy="338" r="3"/>
+    <circle cx="365" cy="350" r="3"/>
+    <circle cx="385" cy="338" r="3"/>
+    <circle cx="405" cy="350" r="3"/>
+    <circle cx="425" cy="358" r="3"/>
+    <circle cx="358" cy="362" r="3"/>
+    <circle cx="402" cy="338" r="3"/>
+    <circle cx="380" cy="362" r="3"/>
+    <!-- Submissions -->
+    <circle cx="488" cy="338" r="3"/>
+    <circle cx="510" cy="350" r="3"/>
+    <circle cx="528" cy="338" r="3"/>
+    <circle cx="548" cy="352" r="3"/>
+    <circle cx="525" cy="362" r="3"/>
+    <circle cx="500" cy="358" r="3"/>
+    <circle cx="545" cy="335" r="3"/>
+  </g>
+
+  <!-- Gates on the wall -->
+  <g fill="#c97a3f" stroke="#1f1f1f" stroke-width="1.5">
+    <rect x="635" y="172" width="26" height="22" transform="rotate(-26 648 183)"/>
+    <rect x="657" y="281" width="26" height="22" transform="rotate(3 670 292)"/>
+    <rect x="624" y="384" width="26" height="22" transform="rotate(33 637 395)"/>
+    <rect x="241" y="370" width="26" height="22" transform="rotate(-30 254 381)"/>
+  </g>
+
+  <!-- Main labels -->
+  <g font-family="Georgia, serif" fill="#1f1f1f" text-anchor="middle">
+    <text x="450" y="24" font-size="20" font-weight="600">The owned monolith</text>
+    <text x="450" y="44" font-size="12" font-style="italic" fill="#666">one swimlane · one language · many events</text>
+    <text x="450" y="546" font-size="11" font-style="italic" fill="#888">each dot is a business event; the dashed neighborhoods are subdomains in problem-space — the code is one lane with no walls between them</text>
+  </g>
+
+  <!-- Gate callout -->
+  <g font-family="Georgia, serif" font-size="12" fill="#c97a3f" font-style="italic">
+    <text x="700" y="228">translation slices</text>
+    <text x="700" y="244">live at the gates,</text>
+    <text x="700" y="260">never inside</text>
+  </g>
+</svg>

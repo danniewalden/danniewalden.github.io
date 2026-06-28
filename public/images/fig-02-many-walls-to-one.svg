@@ -1,0 +1,105 @@
+<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-3 desc-3">
+  <title id="title-3">From Many Walls to One Wall</title>
+  <desc id="desc-3">Three side-by-side panels showing the bounded context shrinking over time. Panel 1 (Evans 2003): three solidly fortified bounded-context boxes connected by ACLs. Panel 2 (DCB-aligned writing): same three boxes but with dashed walls and faded labels. Panel 3 (This post): one outer wall around scattered events with no internal labels.</desc>
+
+  <rect width="900" height="380" fill="#fafaf7"/>
+
+  <!-- Figure title -->
+  <g font-family="Georgia, serif" text-anchor="middle">
+    <text x="450" y="32" font-size="20" font-weight="600" fill="#1f1f1f">From many walls to one wall</text>
+    <text x="450" y="52" font-size="12" font-style="italic" fill="#666">the bounded context, shrinking</text>
+  </g>
+
+  <!-- Panel dividers (subtle) -->
+  <g stroke="#ddd" stroke-width="1">
+    <line x1="300" y1="80" x2="300" y2="335"/>
+    <line x1="600" y1="80" x2="600" y2="335"/>
+  </g>
+
+  <!-- ===== PANEL 1: Evans 2003 ===== -->
+  <text x="150" y="98" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="600" fill="#1f1f1f">Evans, 2003</text>
+
+  <g fill="#fff7e8" stroke="#1f1f1f" stroke-width="3">
+    <rect x="30" y="160" width="65" height="55" rx="3"/>
+    <rect x="120" y="160" width="65" height="55" rx="3"/>
+    <rect x="210" y="160" width="65" height="55" rx="3"/>
+  </g>
+
+  <g stroke="#9a3a3a" stroke-width="2.5" fill="none">
+    <line x1="95" y1="187" x2="120" y2="187"/>
+    <line x1="185" y1="187" x2="210" y2="187"/>
+  </g>
+  <g font-family="Georgia, serif" text-anchor="middle" font-size="9" font-style="italic" fill="#9a3a3a">
+    <text x="107" y="180">ACL</text>
+    <text x="197" y="180">ACL</text>
+  </g>
+
+  <g font-family="Georgia, serif" text-anchor="middle" font-size="10" fill="#5e4818">
+    <text x="62" y="195">Manuscripts</text>
+    <text x="152" y="195">Reviews</text>
+    <text x="242" y="195">Editorial</text>
+  </g>
+
+  <g font-family="Georgia, serif" text-anchor="middle" font-style="italic" fill="#666">
+    <text x="150" y="262" font-size="11">many fortified BCs</text>
+    <text x="150" y="280" font-size="11">ACLs between · context map</text>
+  </g>
+
+  <!-- ===== PANEL 2: DCB-aligned writing ===== -->
+  <text x="450" y="98" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="600" fill="#1f1f1f">Modular monolith</text>
+
+  <g fill="#fefcf8" stroke="#666" stroke-width="1.5" stroke-dasharray="4,3">
+    <rect x="330" y="160" width="65" height="55" rx="3"/>
+    <rect x="420" y="160" width="65" height="55" rx="3"/>
+    <rect x="510" y="160" width="65" height="55" rx="3"/>
+  </g>
+
+  <g stroke="#bbb" stroke-width="1" fill="none" stroke-dasharray="3,3">
+    <line x1="395" y1="187" x2="420" y2="187"/>
+    <line x1="485" y1="187" x2="510" y2="187"/>
+  </g>
+
+  <g font-family="Georgia, serif" text-anchor="middle" font-size="10" fill="#5e4818">
+    <text x="362" y="195">Manuscripts</text>
+    <text x="452" y="195">Reviews</text>
+    <text x="542" y="195">Editorial</text>
+  </g>
+
+  <g font-family="Georgia, serif" text-anchor="middle" font-style="italic" fill="#666">
+    <text x="450" y="262" font-size="11">BCs as modules · softer walls</text>
+    <text x="450" y="280" font-size="11">shared deployment, same vocabulary</text>
+  </g>
+
+  <!-- ===== PANEL 3: This post ===== -->
+  <text x="750" y="98" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="600" fill="#1f1f1f">This post</text>
+
+  <ellipse cx="750" cy="190" rx="115" ry="60" fill="#fefcf8" stroke="#1f1f1f" stroke-width="3"/>
+
+  <g fill="#3a3a3a">
+    <circle cx="690" cy="170" r="3"/>
+    <circle cx="715" cy="160" r="3"/>
+    <circle cx="745" cy="160" r="3"/>
+    <circle cx="775" cy="167" r="3"/>
+    <circle cx="805" cy="175" r="3"/>
+    <circle cx="680" cy="190" r="3"/>
+    <circle cx="710" cy="195" r="3"/>
+    <circle cx="745" cy="185" r="3"/>
+    <circle cx="775" cy="195" r="3"/>
+    <circle cx="800" cy="200" r="3"/>
+    <circle cx="695" cy="215" r="3"/>
+    <circle cx="720" cy="220" r="3"/>
+    <circle cx="745" cy="215" r="3"/>
+    <circle cx="780" cy="220" r="3"/>
+  </g>
+
+  <!-- Gate on the wall -->
+  <rect x="858" y="184" width="14" height="12" fill="#c97a3f" stroke="#1f1f1f" stroke-width="1"/>
+
+  <g font-family="Georgia, serif" text-anchor="middle" font-style="italic" fill="#666">
+    <text x="750" y="262" font-size="11">one outer wall · no internal labels</text>
+    <text x="750" y="280" font-size="11">subdomains stay in problem-space</text>
+  </g>
+
+  <!-- Bottom timeline arrow + caption -->
+  <text x="450" y="345" text-anchor="middle" font-family="Georgia, serif" font-size="11" font-style="italic" fill="#888">fortified BCs (2003) → BCs as modules (today's mainstream) → no walls inside, one wall outside (here)</text>
+</svg>

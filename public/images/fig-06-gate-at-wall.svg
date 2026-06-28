@@ -1,0 +1,152 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-6 desc-6">
+  <title id="title-6">The Gate at the Wall</title>
+  <desc id="desc-6">Cross-section showing the city wall with a translation slice as a gate. Left side (outside the wall) is a sandy region labeled "Outside" containing four foreign-vocabulary events from a legacy system, rendered in monospace font with cryptic codes. Right side (inside the wall) is the monolith, with two local business events emerging from the gate and scattered slice-dots flowing further into the interior. The wall is a thick dark vertical band, the gate is an orange rectangle straddling the wall containing the mini-steps "fold → process → emit". Arrows show foreign events being absorbed and local events being produced.</desc>
+
+  <defs>
+    <marker id="arrow-foreign" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#7a2828"/>
+    </marker>
+    <marker id="arrow-local" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#5e4818"/>
+    </marker>
+    <marker id="arrow-mini" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 5 3, 0 6" fill="#4a2818"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="520" fill="#fafaf7"/>
+
+  <!-- Title -->
+  <g font-family="Georgia, serif" text-anchor="middle">
+    <text x="450" y="32" font-size="20" font-weight="600" fill="#1f1f1f">Translation lives at the gate</text>
+    <text x="450" y="52" font-size="12" font-style="italic" fill="#666">where the monolith ends and someone else's vocabulary begins</text>
+  </g>
+
+  <!-- OUTSIDE region -->
+  <rect x="20" y="80" width="270" height="380" fill="#ece3d3"/>
+  <g font-family="Georgia, serif" text-anchor="middle">
+    <text x="155" y="105" font-size="14" font-weight="600" fill="#4a3a20">Outside</text>
+    <text x="155" y="123" font-size="11" font-style="italic" fill="#5e4818">a legacy system we integrate with</text>
+    <text x="155" y="150" font-size="12" font-weight="600" fill="#1f1f1f">Acme Legacy ERP</text>
+  </g>
+
+  <!-- Foreign events with cryptic/monospace styling -->
+  <g font-family="Courier, monospace" font-size="11">
+    <rect x="35" y="180" width="220" height="35" fill="#fff" stroke="#7a2828" stroke-width="1.5" rx="2"/>
+    <text x="145" y="202" text-anchor="middle" fill="#7a2828">INV_POSTED#4982</text>
+
+    <rect x="35" y="225" width="220" height="35" fill="#fff" stroke="#7a2828" stroke-width="1.5" rx="2"/>
+    <text x="145" y="247" text-anchor="middle" fill="#7a2828">VENDOR_PAID_OK</text>
+
+    <rect x="35" y="270" width="220" height="35" fill="#fff" stroke="#7a2828" stroke-width="1.5" rx="2"/>
+    <text x="145" y="292" text-anchor="middle" fill="#7a2828">PO.CLOSED.0023</text>
+
+    <rect x="35" y="315" width="220" height="35" fill="#fff" stroke="#7a2828" stroke-width="1.5" rx="2"/>
+    <text x="145" y="337" text-anchor="middle" fill="#7a2828">INV_VOIDED#4982</text>
+  </g>
+
+  <text x="155" y="395" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-style="italic" fill="#7a2828">foreign vocabulary · their schema, their rate of change</text>
+
+  <!-- Wall (thick vertical band) -->
+  <rect x="290" y="80" width="20" height="380" fill="#1f1f1f"/>
+
+  <!-- Translation slice (gate) embedded in the wall -->
+  <rect x="265" y="190" width="70" height="180" fill="#c97a3f" stroke="#1f1f1f" stroke-width="2" rx="3"/>
+
+  <!-- Inside the gate: mini-diagram -->
+  <g font-family="Georgia, serif" text-anchor="middle">
+    <text x="300" y="207" font-size="9" font-weight="700" fill="#1f1f1f">translation</text>
+    <text x="300" y="219" font-size="9" font-weight="700" fill="#1f1f1f">slice</text>
+
+    <line x1="300" y1="227" x2="300" y2="237" stroke="#1f1f1f" stroke-width="0.5"/>
+
+    <text x="300" y="252" font-size="9" font-style="italic" fill="#3a1f0a">fold</text>
+    <line x1="300" y1="258" x2="300" y2="270" stroke="#3a1f0a" stroke-width="1" marker-end="url(#arrow-mini)"/>
+
+    <text x="300" y="287" font-size="9" font-style="italic" fill="#3a1f0a">process</text>
+    <line x1="300" y1="293" x2="300" y2="305" stroke="#3a1f0a" stroke-width="1" marker-end="url(#arrow-mini)"/>
+
+    <text x="300" y="322" font-size="9" font-style="italic" fill="#3a1f0a">emit</text>
+
+    <line x1="300" y1="332" x2="300" y2="342" stroke="#1f1f1f" stroke-width="0.5"/>
+    <text x="300" y="358" font-size="8" font-style="italic" fill="#1f1f1f">(local event)</text>
+  </g>
+
+  <!-- Arrows from foreign events into the gate (left side) -->
+  <g stroke="#7a2828" stroke-width="1.5" fill="none">
+    <line x1="255" y1="197" x2="265" y2="225" marker-end="url(#arrow-foreign)"/>
+    <line x1="255" y1="242" x2="265" y2="250" marker-end="url(#arrow-foreign)"/>
+    <line x1="255" y1="287" x2="265" y2="285" marker-end="url(#arrow-foreign)"/>
+    <line x1="255" y1="332" x2="265" y2="320" marker-end="url(#arrow-foreign)"/>
+  </g>
+
+  <!-- INSIDE region -->
+  <rect x="335" y="80" width="555" height="380" fill="#fefcf8"/>
+  <g font-family="Georgia, serif" text-anchor="middle">
+    <text x="612" y="105" font-size="14" font-weight="600" fill="#1f1f1f">Inside (the monolith)</text>
+    <text x="612" y="123" font-size="11" font-style="italic" fill="#666">one swimlane · one language · plain script</text>
+  </g>
+
+  <!-- Arrows from the gate to local events -->
+  <g stroke="#5e4818" stroke-width="1.5" fill="none">
+    <line x1="335" y1="250" x2="395" y2="240" marker-end="url(#arrow-local)"/>
+    <line x1="335" y1="320" x2="395" y2="335" marker-end="url(#arrow-local)"/>
+  </g>
+
+  <!-- Local business events emerging from the gate -->
+  <g font-family="Georgia, serif" font-size="11">
+    <rect x="395" y="220" width="135" height="40" fill="#fff7e8" stroke="#9a7a3a" stroke-width="1.5" rx="5"/>
+    <text x="462" y="237" text-anchor="middle" font-weight="600" fill="#5e4818">Invoice-</text>
+    <text x="462" y="252" text-anchor="middle" font-weight="600" fill="#5e4818">Received</text>
+
+    <rect x="395" y="315" width="135" height="40" fill="#fff7e8" stroke="#9a7a3a" stroke-width="1.5" rx="5"/>
+    <text x="462" y="332" text-anchor="middle" font-weight="600" fill="#5e4818">Invoice-</text>
+    <text x="462" y="347" text-anchor="middle" font-weight="600" fill="#5e4818">Cancelled</text>
+  </g>
+
+  <!-- Arrows from local events flowing further into the monolith -->
+  <g stroke="#5e4818" stroke-width="1.5" fill="none">
+    <line x1="530" y1="240" x2="615" y2="240" marker-end="url(#arrow-local)"/>
+    <line x1="530" y1="335" x2="615" y2="335" marker-end="url(#arrow-local)"/>
+  </g>
+
+  <!-- Scattered slice/event dots inside -->
+  <g fill="#3a3a3a">
+    <circle cx="640" cy="200" r="3"/>
+    <circle cx="670" cy="210" r="3"/>
+    <circle cx="710" cy="195" r="3"/>
+    <circle cx="745" cy="205" r="3"/>
+    <circle cx="790" cy="200" r="3"/>
+    <circle cx="830" cy="210" r="3"/>
+    <circle cx="635" cy="240" r="3"/>
+    <circle cx="675" cy="250" r="3"/>
+    <circle cx="715" cy="245" r="3"/>
+    <circle cx="755" cy="240" r="3"/>
+    <circle cx="795" cy="250" r="3"/>
+    <circle cx="830" cy="245" r="3"/>
+    <circle cx="640" cy="280" r="3"/>
+    <circle cx="680" cy="290" r="3"/>
+    <circle cx="720" cy="285" r="3"/>
+    <circle cx="760" cy="295" r="3"/>
+    <circle cx="800" cy="280" r="3"/>
+    <circle cx="630" cy="335" r="3"/>
+    <circle cx="665" cy="345" r="3"/>
+    <circle cx="705" cy="340" r="3"/>
+    <circle cx="745" cy="335" r="3"/>
+    <circle cx="780" cy="345" r="3"/>
+    <circle cx="815" cy="340" r="3"/>
+    <circle cx="650" cy="375" r="3"/>
+    <circle cx="690" cy="380" r="3"/>
+    <circle cx="730" cy="375" r="3"/>
+    <circle cx="770" cy="385" r="3"/>
+    <circle cx="810" cy="380" r="3"/>
+  </g>
+
+  <text x="730" y="425" text-anchor="middle" font-family="Georgia, serif" font-size="11" font-style="italic" fill="#666">...other slices fold these freely · no internal translators needed</text>
+
+  <!-- Bottom caption -->
+  <g font-family="Georgia, serif" text-anchor="middle">
+    <text x="450" y="488" font-size="13" fill="#1f1f1f">Foreign vocabulary stops at the wall.</text>
+    <text x="450" y="508" font-size="11" font-style="italic" fill="#666">Inside, every slice speaks the same language — translation only at the gates.</text>
+  </g>
+</svg>
